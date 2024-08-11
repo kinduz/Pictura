@@ -1,0 +1,45 @@
+@import "variables/global";
+@import "reset";
+@import "themes/dark";
+@import "themes/light";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
+  //font-family: var(--font-family-main), sans-serif;
+  font-weight: 400;
+
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.app {
+  border: 1px solid;
+  font-size: var(--font-size-main);
+  background: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+input[type=file]::file-selector-button {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-track {
+  background: #131313;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #8f8786;
+  border-radius: 20px;
+  border: 3px solid #8f8786;
+}

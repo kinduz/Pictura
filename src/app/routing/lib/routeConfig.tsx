@@ -1,4 +1,4 @@
-import { RouteObject } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 import { RoutePaths } from './routePaths';
 import {
   AboutPageLazy,
@@ -8,7 +8,22 @@ import {
   RegistrationPageLazy,
 } from '../../../pages';
 
-export const routeConfig: RouteObject[] = [
+export const routeConfigPublic: RouteObject[] = [
+  {
+    path: RoutePaths.authorization,
+    element: <AuthorizationPageLazy />,
+  },
+  {
+    path: RoutePaths.registration,
+    element: <RegistrationPageLazy />,
+  },
+  {
+    path: '*',
+    element: <Navigate to={RoutePaths.authorization} />,
+  },
+];
+
+export const routeConfigPrivate: RouteObject[] = [
   {
     path: RoutePaths.main,
     element: <MainPageLazy />,
@@ -20,13 +35,5 @@ export const routeConfig: RouteObject[] = [
   {
     path: RoutePaths.notFound,
     element: <NotFoundPageLazy />,
-  },
-  {
-    path: RoutePaths.authorization,
-    element: <AuthorizationPageLazy />,
-  },
-  {
-    path: RoutePaths.registration,
-    element: <RegistrationPageLazy />,
   },
 ];

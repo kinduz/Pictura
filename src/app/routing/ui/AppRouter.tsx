@@ -1,23 +1,12 @@
 import { useRoutes } from 'react-router-dom';
 import React, { Suspense } from 'react';
-import { routeConfig } from '../lib';
-import { SuspenseLoader } from '../../../shared';
+import { routeConfigPrivate, routeConfigPublic } from '../lib';
+import { Layout, SuspenseLoader } from '../../../shared';
 
 function RoutesFunction() {
-  return useRoutes(routeConfig);
+  const token = localStorage.getItem('token');
+  return useRoutes(token ? routeConfigPrivate : routeConfigPublic);
 }
-
-const Layout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="app">
-      {children}
-    </div>
-  );
-};
 
 const AppRouter = () => {
   return (
