@@ -5,66 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f56b3d5-f7ad-4ae8-921e-2f4c84e96b89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/api/firebase/firebase.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/lib/form/authForm.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/lib/form/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/lib/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/ui/Auth.component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/ui/Auth.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Authorization/ui/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/lib/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Card/Card.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Card/Card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Card/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Input/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Layout/Layout.styled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Layout/Layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Layout/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routing/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routing/lib/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routing/lib/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routing/lib/routeConfig.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routing/lib/routeConfig.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routing/lib/routePaths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routing/lib/routePaths.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routing/ui/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routing/ui/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/routing/ui/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routing/ui/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/AboutPage.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/AboutPage.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/AboutPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/AboutPageLazy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/AboutPageLazy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthorizationPage/AuthorizationPage.lazy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthorizationPage/AuthorizationPage.lazy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthorizationPage/AuthorizationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthorizationPage/AuthorizationPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthorizationPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthorizationPage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/MainPage.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/MainPage.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/MainPageLazy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/MainPageLazy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPageLazy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPageLazy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegistrationPage/RegistrationPage.lazy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegistrationPage/RegistrationPage.lazy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegistrationPage/RegistrationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegistrationPage/RegistrationPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegistrationPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegistrationPage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/helpers/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/helpers/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/helpers/hooks/useSetTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/helpers/hooks/useSetTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/helpers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/helpers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loading/Loading.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loading/Loading.styled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loading/Loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loading/Loading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loading/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loading/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/SuspenseLoader/SuspenseLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/SuspenseLoader/SuspenseLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/SuspenseLoader/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/SuspenseLoader/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +92,8 @@
       <workItem from="1722714947466" duration="1346000" />
       <workItem from="1723118697139" duration="1380000" />
       <workItem from="1723120418195" duration="2140000" />
-      <workItem from="1723364304175" duration="3206000" />
+      <workItem from="1723364304175" duration="3330000" />
+      <workItem from="1723892896905" duration="28000" />
     </task>
     <servers />
   </component>

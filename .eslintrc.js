@@ -39,6 +39,8 @@ module.exports = {
     },
   },
   rules: {
+    'max-len': 'off',
+    'linebreak-style': 'off',
     'react/jsx-indent': [2, 2],
     'arrow-body-style': 'off',
     'react/jsx-indent-props': [2, 2],

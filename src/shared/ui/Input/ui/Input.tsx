@@ -1,7 +1,7 @@
 import {
   Control, Controller, FieldValues, Path, PathValue,
 } from 'react-hook-form';
-import { Flex, Input as AntdInput } from 'antd';
+import { Input as AntdInput } from 'antd';
 import { InputBlockStyled } from './Input.styled';
 
 interface InputProps<TFieldValues extends FieldValues>{

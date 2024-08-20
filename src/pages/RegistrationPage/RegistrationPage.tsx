@@ -1,6 +1,7 @@
-import React from 'react';
+import { useSetTitle } from '../../shared';
 
 const RegistrationPage = () => {
+  useSetTitle({ title: 'Регистрация' });
   return (
     <div>
       reg
