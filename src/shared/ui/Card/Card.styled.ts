@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type TProps = {
   gap?: number;
+  isMargin?: boolean;
 }
 
 export const CardStyled = styled('div')<TProps>`
@@ -14,5 +15,6 @@ export const CardStyled = styled('div')<TProps>`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: ${(props: TProps) => props.gap}px;
+    gap: ${(props) => props.gap}px;
+    margin: 0 ${(props) => props.isMargin && 24}px;
 `;
