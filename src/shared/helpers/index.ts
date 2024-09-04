@@ -1,1 +1,1 @@
-export * from './hooks';
+export { useSetTitle } from './hooks';

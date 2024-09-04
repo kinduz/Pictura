@@ -5,13 +5,14 @@ type TCardProps = React.PropsWithChildren & {
   title?: string;
   gap?: number;
   isMargin?: boolean;
+  minHeight?: boolean;
 }
 
 export const Card: React.FC<TCardProps> = ({
-  children, title, gap, isMargin,
+  children, title, gap, isMargin, minHeight = true,
 }) => {
   return (
-    <CardStyled isMargin={isMargin} gap={gap} title={title}>
+    <CardStyled minHeight={minHeight} isMargin={isMargin} gap={gap} title={title}>
       {children}
     </CardStyled>
   );

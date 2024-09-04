@@ -1,12 +1,14 @@
 import { MdCamera } from 'react-icons/md';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Flex } from 'antd';
+import { Checkbox, Flex } from 'antd';
 import { Link } from 'react-router-dom';
 import {
   Button, Card, Input, SecondaryText,
+  FormStyled, LogoStyled, RegistrationTextStyled,
+  LinkStyled,
 } from '../../../shared';
-import { FormStyled, LogoStyled, RegistrationTextStyled } from './Auth.styled';
+
 import { AuthYupSchema } from '../lib';
 import { AuthButtons } from './AuthButtons';
 
@@ -15,6 +17,7 @@ export const AuthComponent = () => {
     resolver: yupResolver(AuthYupSchema),
     mode: 'onSubmit',
   });
+
   return (
     <Card isMargin gap={12}>
       <LogoStyled>
@@ -25,6 +28,18 @@ export const AuthComponent = () => {
         <FormStyled>
           <Input placeholder="Адрес электронной почты" control={control} name="email" label="Адрес электронной почты" type="text" />
           <Input placeholder="Пароль" control={control} name="password" label="Пароль" type="password" />
+          <Flex justify="space-between" align="center">
+            <Controller
+              name="rememberMe"
+              control={control}
+              render={({ field }) => (
+                <Checkbox {...field}>
+                  Запомнить меня
+                </Checkbox>
+              )}
+            />
+            <LinkStyled to="/">Забыли пароль?</LinkStyled>
+          </Flex>
           <Button type="primary" text="Войти" />
         </FormStyled>
         <SecondaryText text="или с помощью" />
