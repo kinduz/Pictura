@@ -18,7 +18,7 @@ export const LogoStyled = styled.div`
     }
 `;
 
-export const FormStyled = styled.div`
+export const FormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 12px;

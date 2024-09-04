@@ -1,5 +1,5 @@
-import { AuthComponent } from '../../features/Authorization';
-import { useSetTitle } from '../../shared';
+import { AuthComponent } from '../../features';
+import { useSetTitle } from '../../shared/helpers/hooks/useSetTitle';
 
 const AuthorizationPage = () => {
   useSetTitle({ title: 'Авторизация' });

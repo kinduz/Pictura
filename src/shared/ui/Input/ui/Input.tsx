@@ -3,6 +3,7 @@ import {
 } from 'react-hook-form';
 import { Input as AntdInput } from 'antd';
 import { InputBlockStyled } from './Input.styled';
+import { ErrorInputMessage } from '../../../styles';
 
 interface InputProps<TFieldValues extends FieldValues>{
   control: Control<TFieldValues>;
@@ -28,32 +29,34 @@ export const Input = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       defaultValue={defaultValue}
-      render={({ field, fieldState: { error: fieldError } }) => (
-        <InputBlockStyled>
-          <span>{label}</span>
-          {type === 'password' ? (
-            <AntdInput.Password
-              {...field}
-              required={isRequired}
-              variant="outlined"
-              placeholder={placeholder}
-              size="large"
-            />
-          )
-            : (
-              <AntdInput
+      render={({ field, fieldState: { error: fieldError } }) => {
+        return (
+          <InputBlockStyled>
+            <span>{label}</span>
+            {type === 'password' ? (
+              <AntdInput.Password
                 {...field}
                 required={isRequired}
                 variant="outlined"
                 placeholder={placeholder}
                 size="large"
               />
+            )
+              : (
+                <AntdInput
+                  {...field}
+                  required={isRequired}
+                  variant="outlined"
+                  placeholder={placeholder}
+                  size="large"
+                />
+              )}
+            {fieldError && (
+              <ErrorInputMessage>{fieldError.message}</ErrorInputMessage>
             )}
-          {fieldError && (
-            <span>{fieldError.message}</span>
-          )}
-        </InputBlockStyled>
-      )}
+          </InputBlockStyled>
+        );
+      }}
     />
   );
 };

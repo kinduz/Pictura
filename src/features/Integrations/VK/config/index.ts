@@ -1,1 +1,2 @@
-export * from './vkSDK.config';
+// export * from './vkSDK.config';
+export const a = {};

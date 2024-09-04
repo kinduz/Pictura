@@ -6,7 +6,7 @@ export const AuthButton: FC<TAuthButtonConfig> = ({
   Icon, backgroundColor, iconColor, serviceName, textColor, onClick,
 }) => {
   return (
-    <AuthButtonStyled onClick={onClick} backgroundColor={backgroundColor}>
+    <AuthButtonStyled onClick={() => onClick()} backgroundColor={backgroundColor}>
       <ContentStyled textColor={textColor}>
         <Icon color={iconColor} />
         <span>
