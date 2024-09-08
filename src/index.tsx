@@ -22,11 +22,9 @@ const queryClient = new QueryClient(config);
 
 root.render(
   <QueryClientProvider contextSharing client={queryClient}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </QueryClientProvider>,
 
 );

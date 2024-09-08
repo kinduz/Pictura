@@ -1,4 +1,4 @@
-declare module "*.scss" {
+declare module '*.scss' {
   interface IClassNames {
     [className: string]: string;
   }
@@ -6,11 +6,16 @@ declare module "*.scss" {
   export = classNames;
 }
 
-declare module "*.svg" {
+declare module '*.svg' {
   const content: any;
   export default content;
 }
 
-declare module "*.jpg";
-declare module "*.png";
-declare module "*.mp3";
+declare module '*.gif' {
+  const value: any;
+  export default value;
+}
+
+declare module '*.jpg';
+declare module '*.png';
+declare module '*.mp3';

@@ -1,3 +1,3 @@
-export const useSetTitle = ({ title }: {title: string}) => {
+export const useSetTitle = (title: string) => {
   document.title = title;
 };

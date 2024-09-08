@@ -1,8 +1,9 @@
 import {
   SmileOutlined, SolutionOutlined, UserOutlined,
 } from '@ant-design/icons';
+import { AntdSteps } from '@shared/lib';
 
-export const RegistrationStepsItems: any[] = [
+export const RegistrationSteps: AntdSteps[] = [
   {
     title: 'Регистрация',
     icon: <UserOutlined />,

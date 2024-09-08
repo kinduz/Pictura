@@ -8,10 +8,10 @@ import { ErrorInputMessage } from '../../../styles';
 interface InputProps<TFieldValues extends FieldValues>{
   control: Control<TFieldValues>;
   name: Path<TFieldValues>;
-  type: string;
   label: string;
   placeholder: string;
   isRequired?: boolean;
+  type?: string;
   defaultValue?: PathValue<TFieldValues, Path<TFieldValues>>;
 }
 

@@ -10,11 +10,11 @@ type TProps = ButtonProps & {
 
 export const Button: FC<TProps> = (props) => {
   const {
-    text, width, fontSize, ...otherProps
+    text, width, fontSize, size, ...otherProps
   } = props;
   return (
     <Flex justify="center">
-      <ButtonStyled fontSize={fontSize} width={width} size="large" {...otherProps}>{text}</ButtonStyled>
+      <ButtonStyled fontSize={fontSize} width={width} size={size || 'large'} {...otherProps}>{text}</ButtonStyled>
     </Flex>
   );
 };

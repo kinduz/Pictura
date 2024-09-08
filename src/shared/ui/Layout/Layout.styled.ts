@@ -5,6 +5,7 @@ export const LayoutStyled = styled('div')`
     height: 100%;
     border: 1px solid;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 32px;
 `;

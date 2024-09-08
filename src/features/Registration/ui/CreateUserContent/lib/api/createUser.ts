@@ -17,7 +17,7 @@ export function useRegistration() {
     error,
     isLoading,
     isSuccess,
-  } = useMutation<NewUserModel, unknown, RegistrationType>((data: RegistrationType) => registration(data));
+  } = useMutation<NewUserModel, any, RegistrationType>((data: RegistrationType) => registration(data));
 
   return {
     registrationMutation, data, error, isLoading, isSuccess,

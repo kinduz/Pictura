@@ -1,3 +1,5 @@
+import { BaseRequest } from './Common.model';
+
 export type BaseUserModel = {
     id: number;
     first_name: string;
@@ -6,9 +8,11 @@ export type BaseUserModel = {
     login: string;
 }
 
-export type NewUserModel = {
-    status: 'success' | 'failure',
-    message: string;
+export type NewUserModel = BaseRequest & {
     accessToken: string;
     user: BaseUserModel;
+}
+
+export type UserLoginModel = BaseRequest & {
+    user: BaseUserModel | Pick<BaseUserModel, 'email'>;
 }

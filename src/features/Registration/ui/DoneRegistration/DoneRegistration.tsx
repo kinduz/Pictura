@@ -1,6 +1,6 @@
 import { Flex, Typography } from 'antd';
-import { Button, ImageBlock } from '../../../../shared';
-import img from '../../../../shared/assets/images/emoji_camera.png';
+import { Button, ImageBlock } from '@shared/index';
+import img from '@shared/assets/images/emoji_camera.png';
 
 export const DoneRegistration = () => {
   return (

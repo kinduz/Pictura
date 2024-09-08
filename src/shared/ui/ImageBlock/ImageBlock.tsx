@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Image } from './ImageBlock.styled';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type TProps = {
     src: string;
@@ -12,6 +12,6 @@ export const ImageBlock:FC<TProps> = ({
   src, height, width, alt = 'src',
 }) => {
   return (
-    <Image height={height} width={width}><img src={src} alt={alt} /></Image>
+    <LazyLoadImage height={height} width={width} src={src} effect="blur" alt={alt} />
   );
 };

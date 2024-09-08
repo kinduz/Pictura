@@ -2,7 +2,7 @@ import { RegistrationComponent } from '../../features';
 import { useSetTitle } from '../../shared/helpers/hooks';
 
 const RegistrationPage = () => {
-  useSetTitle({ title: 'Регистрация' });
+  useSetTitle('Регистрация');
   return (
     <RegistrationComponent />
   );

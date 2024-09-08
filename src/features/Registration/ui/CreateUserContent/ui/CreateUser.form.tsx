@@ -8,13 +8,14 @@ import {
   FormStyled, RegistrationTextStyled,
   LinkStyled,
   ErrorInputMessage,
-} from '../../../../../shared';
+} from '@shared/index';
 
 import { RegistrationType, RegYupSchema } from '../lib';
 import { CheckboxStyled } from './CreateUser.styled';
 
 type TCreateUserFormProps = {
   isLoading: boolean;
+  // eslint-disable-next-line no-unused-vars
   submitForm: (data: RegistrationType) => Promise<void>;
   errorMsg?: string;
 }

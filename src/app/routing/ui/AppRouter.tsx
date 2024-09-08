@@ -1,7 +1,8 @@
 import { useRoutes } from 'react-router-dom';
 import React, { Suspense } from 'react';
+import { Layout, SuspenseLoader } from '@shared/index';
+import { Header } from '@widgets/Header';
 import { routeConfigPrivate, routeConfigPublic } from '../lib';
-import { Layout, SuspenseLoader } from '../../../shared';
 
 function RoutesFunction() {
   const token = localStorage.getItem('token');
@@ -12,6 +13,7 @@ const AppRouter = () => {
   return (
     <Suspense fallback={<SuspenseLoader />}>
       <Layout>
+        <Header />
         <RoutesFunction />
       </Layout>
     </Suspense>
