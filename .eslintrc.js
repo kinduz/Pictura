@@ -4,10 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -39,6 +36,7 @@ module.exports = {
     },
   },
   rules: {
+    'react/no-unescaped-entities': 0,
     'max-len': 'off',
     'linebreak-style': 'off',
     'react/jsx-indent': [2, 2],

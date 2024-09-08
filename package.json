@@ -1,5 +1,5 @@
 {
-  "name": "Pictura",
+  "name": "pictura",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,7 +30,9 @@
     "dev": "cross-env HTTPS=true PORT=443 craco start",
     "build": "craco build",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
-    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,16 @@
     ]
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/preset-create-react-app": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-webpack5": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@types/jest": "^29.5.12",
     "@types/react-lazy-load-image-component": "^1.6.4",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
@@ -63,11 +75,15 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-storybook": "^0.8.0",
     "jest": "^27.5.1",
+    "prop-types": "^15.8.1",
     "react-hook-form": "^7.52.2",
     "react-icons": "^5.2.1",
     "sass": "^1.77.8",
+    "storybook": "^8.2.9",
     "styled-components": "^6.1.11",
+    "webpack": "^5.94.0",
     "yup": "^1.4.0"
   }
 }
