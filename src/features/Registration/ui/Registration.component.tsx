@@ -5,12 +5,12 @@ import {
   Card,
   ImageBlock,
   LogoStyled,
+  SuccessStep,
 } from '@shared/index';
 import image from '@shared/assets/images/email-sent.gif';
 import { useAntdStep } from '@shared/helpers/hooks';
 import { CreateUserForm, RegistrationType, useRegistration } from './CreateUserContent';
 import { RegistrationSteps } from '../lib';
-import { DoneRegistration } from './DoneRegistration';
 import { VerificationForm } from '../../Verification';
 
 export const RegistrationComponent = () => {
@@ -46,7 +46,12 @@ export const RegistrationComponent = () => {
           </Flex>
         )}
         {current === 2 && (
-          <DoneRegistration />
+          <SuccessStep
+            buttonText="Перейти в Pictura"
+            toLink="/main"
+            description="Теперь вы можете пользоваться полным функционалом портала и творить магию"
+            title="Ура, регистрация прошла успешно, поздравляем!"
+          />
         )}
       </Card>
     </Flex>

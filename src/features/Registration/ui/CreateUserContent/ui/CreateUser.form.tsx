@@ -67,7 +67,7 @@ export const CreateUserForm: FC<TCreateUserFormProps> = ({ isLoading, submitForm
         <div>
           <Link to="/auth">Войдите,</Link>
           {' '}
-          чтобы насладиться всеми возможностями PinClone
+          чтобы насладиться всеми возможностями Pictura
         </div>
       </RegistrationTextStyled>
     </Flex>

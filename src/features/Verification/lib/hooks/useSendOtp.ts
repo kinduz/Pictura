@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useNotification } from '../../../../shared';
 
 export const useSendOtp = () => {
   const [errorSendOtp, setErrorSendOtp] = useState('');
   const openNotification = useNotification();
+  const navigate = useNavigate();
 
   const sendOtp = async (otp: string, email: string, setNextStep?: () => void) => {
     if (otp.length !== 6) {
@@ -19,6 +21,9 @@ export const useSendOtp = () => {
           type: 'success',
         });
         setNextStep?.();
+        if (!setNextStep) {
+          navigate('/auth', { replace: true });
+        }
       }
     } catch (e: any) {
       setErrorSendOtp(e.response.data.message);

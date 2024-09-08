@@ -1,12 +1,13 @@
 import { useSetTitle } from '@shared/helpers';
 import { useAntdStep } from '@shared/helpers/hooks';
 import { Flex, Steps } from 'antd';
-import { Card } from '@shared/ui';
+import { Card, SuccessStep } from '@shared/ui';
 import { useSearchParams } from 'react-router-dom';
 import { VerificationForm } from '@features/Verification';
 import { useState } from 'react';
 import { resetPasswordSteps } from '../lib';
 import { EmailForm } from './EmailForm';
+import { ResetForm } from './ResetForm';
 
 export const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -18,7 +19,7 @@ export const ResetPassword = () => {
   };
 
   useSetTitle('Сброс пароля');
-  const { current, next, prev } = useAntdStep();
+  const { current, next } = useAntdStep();
   return (
     <Flex vertical align="center" gap={24}>
       <Steps progressDot current={current} items={resetPasswordSteps} />
@@ -28,6 +29,16 @@ export const ResetPassword = () => {
         )}
         {current === 1 && (
           <VerificationForm email={emailValue} setNextStep={next} />
+        )}
+        {current === 2 && (
+          <ResetForm email={emailValue} setNextStep={next} />
+        )}
+        {current === 3 && (
+          <SuccessStep
+            toLink="/auth"
+            buttonText="Авторизоваться"
+            title="Ура, пароль успешно изменен!"
+          />
         )}
       </Card>
     </Flex>
