@@ -28,7 +28,7 @@ export const ResetPassword = () => {
           <EmailForm setValueEmail={setValue} setNextStep={next} email={email || ''} />
         )}
         {current === 1 && (
-          <VerificationForm email={emailValue} setNextStep={next} />
+          <VerificationForm isDbConfirm={false} email={emailValue} setNextStep={next} />
         )}
         {current === 2 && (
           <ResetForm email={emailValue} setNextStep={next} />

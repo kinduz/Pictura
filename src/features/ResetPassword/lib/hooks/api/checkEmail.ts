@@ -1,10 +1,10 @@
 import { useMutation } from 'react-query';
 import axios, { AxiosError } from 'axios';
-import { BaseRequest } from '@shared/lib';
+import { BaseRequest } from '@shared/api';
 import { EmailType } from '../../../ui/EmailForm/EmailForm';
 
 async function checkEmail(email: string) {
-  const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/check-email`, {
+  const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/check-email`, {
     email,
   });
   return response.data;

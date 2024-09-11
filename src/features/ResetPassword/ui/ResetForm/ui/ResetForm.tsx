@@ -1,4 +1,4 @@
-import { useCheckEmail, useResetPassword } from '@features/ResetPassword/lib';
+import { useResetPassword } from '@features/ResetPassword/lib';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ErrorInputMessage, FormStyled } from '@shared/styles';
 import { Button, Input } from '@shared/ui';

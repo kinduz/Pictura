@@ -8,13 +8,13 @@ export const useSendOtp = () => {
   const openNotification = useNotification();
   const navigate = useNavigate();
 
-  const sendOtp = async (otp: string, email: string, setNextStep?: () => void) => {
+  const sendOtp = async (otp: string, email: string, setNextStep?: () => void, isDbConfirm?: boolean) => {
     if (otp.length !== 6) {
       setErrorSendOtp('Введите код подтверждения');
       return;
     }
     try {
-      const request = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/verify-email`, { otp, email });
+      const request = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/verify-email`, { otp, email, isDbConfirm });
       if (request.status === 200) {
         openNotification({
           message: 'Почта подтверждена',

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { DefaultOptions, QueryClient, QueryClientProvider } from 'react-query';
-import { App } from './app';
+import { App, Store } from './app';
+
+interface State {
+  store: Store
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -20,11 +24,19 @@ const config: {
 
 const queryClient = new QueryClient(config);
 
-root.render(
-  <QueryClientProvider contextSharing client={queryClient}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </QueryClientProvider>,
+const store = new Store();
 
+export const Context = createContext<State>({
+  store,
+});
+
+root.render(
+  <Context.Provider value={{ store }}>
+    <QueryClientProvider contextSharing client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </Context.Provider>
+  ,
 );

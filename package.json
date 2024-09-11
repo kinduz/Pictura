@@ -15,6 +15,7 @@
     "axios": "^1.7.7",
     "firebase": "^10.12.5",
     "mobx": "^6.13.1",
+    "mobx-react-lite": "^4.0.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-lazy-load-image-component": "^1.6.2",
@@ -26,8 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env HTTPS=true PORT=3000 craco start",
-    "dev": "cross-env HTTPS=true PORT=443 craco start",
+    "start": "cross-env PORT=3000 craco start",
+    "dev": "cross-env PORT=443 craco start",
     "build": "craco build",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",

@@ -37,6 +37,7 @@ module.exports = {
   },
   rules: {
     'react/no-unescaped-entities': 0,
+    'no-param-reassign': 0,
     'max-len': 'off',
     'linebreak-style': 'off',
     'react/jsx-indent': [2, 2],

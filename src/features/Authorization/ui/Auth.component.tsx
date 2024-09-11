@@ -9,6 +9,7 @@ import {
   LinkStyled,
   ErrorInputMessage,
   useNotification,
+  useStore,
 } from '@shared/index';
 
 import { useEffect, useState } from 'react';
@@ -17,7 +18,6 @@ import { AuthButtons } from './AuthButtons';
 
 export const AuthComponent = () => {
   const openNotification = useNotification();
-
   const [errorCounter, setErrorCounter] = useState(0);
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(AuthYupSchema),
@@ -30,7 +30,9 @@ export const AuthComponent = () => {
   } = useAuth();
 
   useEffect(() => {
-    if (error.status === 401) {
+    console.log(error);
+
+    if (error?.status === 401) {
       setErrorCounter((prev) => prev + 1);
     }
   }, [error]);
@@ -38,7 +40,7 @@ export const AuthComponent = () => {
   useEffect(() => {
     if (errorCounter > 4) {
       openNotification({
-        message: 'Проблемы с входом?',
+        message: 'Проблемы с авторизацией?',
         description: 'Вы можете сбросить пароль, если имеете проблемы со входом',
       });
     }
@@ -53,7 +55,7 @@ export const AuthComponent = () => {
       <Flex gap={16} vertical>
         <FormStyled onSubmit={handleSubmit(authSubmit)}>
           <Input placeholder="Адрес электронной почты" control={control} name="email" label="Адрес электронной почты" type="text" />
-          {error.status === 403 && (
+          {error && error.status === 403 && (
             <LinkStyled to={`../verification?email=${error.email}`}>Подтвердите ваш адрес электронной почты</LinkStyled>
           )}
           <Input placeholder="Пароль" control={control} name="password" label="Пароль" type="password" />

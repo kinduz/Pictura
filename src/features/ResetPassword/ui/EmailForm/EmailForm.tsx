@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useCheckEmail } from '@features/ResetPassword/lib';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ErrorInputMessage, FormStyled } from '@shared/styles';

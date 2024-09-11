@@ -1,14 +1,9 @@
+import {
+  AuthResponse, AuthService, BaseErrorRequest, BaseUserModel,
+} from '@shared/api';
 import { useMutation } from 'react-query';
-import axios from 'axios';
+import { AxiosError, AxiosResponse } from 'axios';
 import { RegistrationType } from '../form';
-import { NewUserModel } from '../../../../../../shared';
-
-async function registration(data: RegistrationType) {
-  const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/registration`, {
-    data,
-  });
-  return response.data;
-}
 
 export function useRegistration() {
   const {
@@ -17,7 +12,7 @@ export function useRegistration() {
     error,
     isLoading,
     isSuccess,
-  } = useMutation<NewUserModel, any, RegistrationType>((data: RegistrationType) => registration(data));
+  } = useMutation<AxiosResponse<AuthResponse>, AxiosError<BaseErrorRequest<BaseUserModel>>, RegistrationType>((data: RegistrationType) => AuthService.registration(data));
 
   return {
     registrationMutation, data, error, isLoading, isSuccess,

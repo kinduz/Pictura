@@ -18,7 +18,7 @@ export const RegistrationComponent = () => {
   const {
     registrationMutation, isLoading, error, isSuccess, data,
   } = useRegistration();
-
+  const user = data?.data.user;
   const submitForm = async (data: RegistrationType) => {
     await registrationMutation(data);
   };
@@ -37,18 +37,18 @@ export const RegistrationComponent = () => {
       <Steps current={current} items={RegistrationSteps} />
       <Card minHeight={current !== 1} isMargin gap={12}>
         {current === 0 && (
-          <CreateUserForm errorMsg={error?.response?.data.error} isLoading={isLoading} submitForm={submitForm} />
+          <CreateUserForm errorMsg={error?.response?.data.message} isLoading={isLoading} submitForm={submitForm} />
         )}
-        {current === 1 && data && (
+        {current === 1 && user && (
           <Flex vertical align="center">
             <ImageBlock height={240} width={250} src={image} />
-            <VerificationForm setNextStep={next} email={data.user.email} />
+            <VerificationForm setNextStep={next} email={user.email} />
           </Flex>
         )}
         {current === 2 && (
           <SuccessStep
-            buttonText="Перейти в Pictura"
-            toLink="/main"
+            buttonText="Авторизоваться"
+            toLink="/auth"
             description="Теперь вы можете пользоваться полным функционалом портала и творить магию"
             title="Ура, регистрация прошла успешно, поздравляем!"
           />

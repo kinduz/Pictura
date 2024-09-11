@@ -8,11 +8,12 @@ import { useResendOtp, useSendOtp } from '../lib';
 type TVerificationFormProps = {
     email: string;
     setNextStep?: () => void;
+    isDbConfirm?: boolean;
 }
 
 type OTPProps = GetProps<typeof Input.OTP>;
 
-export const VerificationForm:FC<TVerificationFormProps> = ({ email, setNextStep }) => {
+export const VerificationForm:FC<TVerificationFormProps> = ({ email, setNextStep, isDbConfirm = true }) => {
   const [otp, setOtp] = useState<string>('');
   const [error, setError] = useState<string>('');
 
@@ -49,7 +50,7 @@ export const VerificationForm:FC<TVerificationFormProps> = ({ email, setNextStep
       <Input.OTP status={error && 'error'} size="large" length={6} value={otp} {...sharedProps} />
       <Flex style={{ width: '100%' }} justify="space-between">
         <Button loading={isDisabled} onClick={() => resendOtp(email)} fontSize={14} text="Отправить код еще раз" type="link" />
-        <Button onClick={() => sendOtp(otp, email, setNextStep)} text="Подтвердить" type="primary" />
+        <Button onClick={() => sendOtp(otp, email, setNextStep, isDbConfirm)} text="Подтвердить" type="primary" />
       </Flex>
       {error && (
         <ErrorInputMessage>{error}</ErrorInputMessage>

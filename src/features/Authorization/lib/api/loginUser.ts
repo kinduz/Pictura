@@ -1,24 +1,25 @@
 import { useMutation } from 'react-query';
-import axios, { AxiosError } from 'axios';
-import { UserLoginModel } from '@shared/lib';
+import { AxiosError, AxiosResponse } from 'axios';
+import { AuthResponse, AuthService, BaseErrorRequest } from '@shared/api';
+import { useStore } from '@shared/helpers';
 import { AuthType } from '../form';
 
-async function login(data: AuthType) {
-  const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, {
-    data,
-  });
-  return response.data;
-}
-
 export function useLogin() {
+  const { store } = useStore();
   const {
     mutate: authMutation,
     data,
     error,
     isLoading,
     isSuccess,
-  } = useMutation<UserLoginModel, AxiosError, AuthType>((data: AuthType) => login(data));
-
+  } = useMutation<AxiosResponse<AuthResponse>, AxiosError<BaseErrorRequest<{email: string}>>, AuthType>((data: AuthType) => AuthService.login(data.email, data.password), {
+    onSuccess(data) {
+      const { accessToken, user } = data.data;
+      localStorage.setItem('token', accessToken);
+      store.setAuth(true);
+      store.setUser(user);
+    },
+  });
   return {
     authMutation, data, error, isLoading, isSuccess,
   };

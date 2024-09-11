@@ -8,7 +8,7 @@ export const useResendOtp = () => {
   const openNotification = useNotification();
   const resendOtp = async (email: string) => {
     try {
-      const request = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/resend-otp`, { email });
+      const request = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/resend-otp`, { email });
       if (request.status === 200) {
         openNotification({
           message: 'Успешно',

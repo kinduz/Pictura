@@ -1,14 +1,14 @@
 import { useMutation } from 'react-query';
 import axios, { AxiosError } from 'axios';
-import { BaseRequest } from '@shared/lib';
 import { ResetPasswordType } from '@features/ResetPassword/ui/ResetForm';
+import { BaseRequest } from '@shared/api';
 
 type TProps = ResetPasswordType & {
   email: string;
 }
 
 async function resetPassword(data: TProps) {
-  const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/reset-password`, {
+  const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/reset-password`, {
     ...data,
   });
   return response.data;
