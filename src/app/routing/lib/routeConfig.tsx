@@ -7,6 +7,9 @@ import {
   RegistrationPageLazy,
   VerificationEmailPageLazy,
   ResetPasswordPageLazy,
+  CreatePictPageLazy,
+  PictsViewPageLazy,
+  ProfilePageLazy,
 } from '@pages/index';
 import { RoutePaths } from './routePaths';
 
@@ -27,23 +30,33 @@ export const routeConfigPublic: RouteObject[] = [
     path: RoutePaths.reset_password,
     element: <ResetPasswordPageLazy />,
   },
-  {
-    path: '*',
-    element: <Navigate to={RoutePaths.authorization} />,
-  },
 ];
 
 export const routeConfigPrivate: RouteObject[] = [
   {
     path: RoutePaths.main,
     element: <MainPageLazy />,
+    children: [
+      {
+        path: RoutePaths.create,
+        element: <CreatePictPageLazy />,
+      },
+      {
+        path: RoutePaths.picts,
+        element: <PictsViewPageLazy />,
+      },
+      {
+        path: RoutePaths.profile,
+        element: <ProfilePageLazy />,
+      },
+    ],
   },
   {
     path: RoutePaths.about,
     element: <AboutPageLazy />,
   },
-  {
-    path: RoutePaths.notFound,
-    element: <NotFoundPageLazy />,
-  },
+  // {
+  //   path: RoutePaths.notFound,
+  //   element: <NotFoundPageLazy />,
+  // },
 ];

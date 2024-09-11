@@ -5,3 +5,6 @@ export * from './AuthorizationPage';
 export * from './RegistrationPage';
 export * from './VerificationEmailPage';
 export * from './ResetPasswordPage';
+export * from './CreatePictPage';
+export * from './PictsViewPage';
+export * from './ProfilePage';

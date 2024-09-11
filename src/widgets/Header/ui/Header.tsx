@@ -5,7 +5,7 @@ import { Flex } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '@shared/helpers';
 import { observer } from 'mobx-react-lite';
-import { HeaderStyled, LogoHeaderStyled } from './Header.styled';
+import { HeaderLink, HeaderStyled, LogoHeaderStyled } from './Header.styled';
 import { useLogout } from '../lib';
 
 export const Header = memo(observer(() => {
@@ -13,23 +13,32 @@ export const Header = memo(observer(() => {
   const { isAuth } = useStore().store;
   const { handleLogout } = useLogout();
   return (
-    <HeaderStyled>
-      <LogoHeaderStyled onClick={() => navigate('/main')}>
-        <ImageBlock height={48} width={48} src={logoSrc} />
-        <Flex vertical>
-          <span>Pictura</span>
-          <span>create the art by your own</span>
-        </Flex>
+    <HeaderStyled isAuth={isAuth}>
+      <LogoHeaderStyled onClick={() => navigate(`${isAuth ? '/picts' : '/landing'}`)}>
+        <ImageBlock height={52} width={52} src={logoSrc} />
+        {!isAuth && (
+          <Flex vertical>
+            <span>Pictura</span>
+            <span>create the art by your own</span>
+          </Flex>
+        )}
       </LogoHeaderStyled>
-      {!isAuth ? (
+      <Flex align="center" justify="space-between" style={{ width: '100%' }}>
         <Flex align="center" gap={4}>
-          <Button onClick={() => navigate('/auth')} type="primary" text="Войти" />
-          <Button onClick={() => navigate('/registration')} type="text" text="Регистрация" />
+          <HeaderLink to="/picts">Посмотреть</HeaderLink>
+          {isAuth && (
+            <HeaderLink to="/create">Создать</HeaderLink>
+          )}
         </Flex>
-      ) : (
-        <Button onClick={handleLogout} type="primary" text="Выйти" />
-      )}
-
+        {!isAuth ? (
+          <Flex align="center" gap={16}>
+            <Button onClick={() => navigate('/auth')} type="primary" text="Войти" />
+            <Button onClick={() => navigate('/registration')} type="default" text="Регистрация" />
+          </Flex>
+        ) : (
+          <Button onClick={handleLogout} type="primary" text="Выйти" />
+        )}
+      </Flex>
     </HeaderStyled>
   );
 }));
