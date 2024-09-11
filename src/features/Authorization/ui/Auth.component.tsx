@@ -30,8 +30,6 @@ export const AuthComponent = () => {
   } = useAuth();
 
   useEffect(() => {
-    console.log(error);
-
     if (error?.status === 401) {
       setErrorCounter((prev) => prev + 1);
     }

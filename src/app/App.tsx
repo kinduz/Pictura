@@ -7,7 +7,6 @@ import { refreshToken } from './api';
 
 const App = () => {
   const { store } = useStore();
-  console.log(store.isAuth);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
