@@ -1,6 +1,8 @@
+import { CreatePict } from '@features/CreatePict';
+
 const CreatePictPage = () => {
   return (
-    <div>123</div>
+    <CreatePict />
   );
 };
 

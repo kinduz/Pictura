@@ -3,3 +3,4 @@ export * from './Registration';
 export * from './Verification';
 export * from './Integrations';
 export * from './ResetPassword';
+export * from './CreatePict';

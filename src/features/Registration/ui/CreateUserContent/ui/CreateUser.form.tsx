@@ -8,6 +8,7 @@ import {
   FormStyled, RegistrationTextStyled,
   LinkStyled,
   ErrorInputMessage,
+  Checkbox,
 } from '@shared/index';
 
 import { RegistrationType, RegYupSchema } from '../lib';
@@ -35,29 +36,7 @@ export const CreateUserForm: FC<TCreateUserFormProps> = ({ isLoading, submitForm
         <Input placeholder="Адрес электронной почты" control={control} name="email" label="Адрес электронной почты" type="text" />
         <Input placeholder="Пароль" control={control} name="password" label="Пароль" type="password" />
         <Input placeholder="Подтвердите пароль" control={control} name="confirmPassword" label="Подтвердите пароль" type="password" />
-        <Controller
-          name="accessPolicy"
-          control={control}
-          defaultValue={false}
-          render={({ field, fieldState: { error: fieldError } }) => {
-            return (
-              <Flex vertical gap={8} align="start">
-                <CheckboxStyled {...field}>
-                  Регистрируясь, вы принимаете
-                  {' '}
-                  <LinkStyled to="/policy">пользовательское соглашение</LinkStyled>
-                </CheckboxStyled>
-                {fieldError && (
-                  <ErrorInputMessage>{fieldError.message}</ErrorInputMessage>
-                )}
-              </Flex>
-
-            );
-          }}
-        />
-        {errorMsg && (
-          <ErrorInputMessage>{errorMsg}</ErrorInputMessage>
-        )}
+        <Checkbox label="" control={control} name="accessPolicy" type="accessPolicy" />
         <Button loading={isLoading} htmlType="submit" type="primary" text="Регистрация" />
       </FormStyled>
       <RegistrationTextStyled>

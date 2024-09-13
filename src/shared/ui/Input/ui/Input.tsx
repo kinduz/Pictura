@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import {
   Control, Controller, FieldValues, Path, PathValue,
 } from 'react-hook-form';
@@ -33,24 +34,34 @@ export const Input = <TFieldValues extends FieldValues>({
         return (
           <InputBlockStyled>
             <span>{label}</span>
-            {type === 'password' ? (
-              <AntdInput.Password
+            {type === 'textarea' ? (
+              <AntdInput.TextArea
                 {...field}
+                rows={4}
                 required={isRequired}
                 variant="outlined"
                 placeholder={placeholder}
                 size="large"
               />
             )
-              : (
-                <AntdInput
+              : type === 'password' ? (
+                <AntdInput.Password
                   {...field}
                   required={isRequired}
                   variant="outlined"
                   placeholder={placeholder}
                   size="large"
                 />
-              )}
+              )
+                : (
+                  <AntdInput
+                    {...field}
+                    required={isRequired}
+                    variant="outlined"
+                    placeholder={placeholder}
+                    size="large"
+                  />
+                )}
             {fieldError && (
               <ErrorInputMessage>{fieldError.message}</ErrorInputMessage>
             )}

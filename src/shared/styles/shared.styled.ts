@@ -14,3 +14,8 @@ export const ErrorInputMessage = styled('span')`
     color: red !important;
     font-size: 14px !important;
 `;
+
+export const Container = styled('div')`
+    padding: 0 64px;
+    width: 100%;
+`;
