@@ -12,7 +12,12 @@ export const CreatePict = () => {
   const [isDisable, setIsDisable] = useState(true);
 
   const submitForm = (data: PictInfoFormSchemaType) => {
-    console.log(data);
+    const tags = data?.tags?.map((tag: any) => ({
+      id: Number(tag.key),
+      value: tag.value,
+    }));
+    const submitData = { ...data, tags };
+    console.log(submitData);
   };
 
   return (

@@ -25,6 +25,35 @@ export const UploadMediaStyled = styled('div')`
     }
 `;
 
+export const ImageContainer = styled('div')`
+    display: flex;
+    border-radius: 25px;
+    position: relative;
+    max-height: 450px;
+    max-width: 320px;
+    & > img {
+    border: 1px dashed #DADADA;
+        height: 100%;
+        border-radius: 25px;
+        width: 100%;
+    } 
+`;
+
+export const DeleteButton = styled(Flex)`
+    position: absolute;
+    right: 12px;
+    background: #F5F5F5;
+    top: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s background;
+    &:hover {
+        background: #e0e0e0;
+    }
+`;
+
 export const UploadImageInfo = styled(Flex)`
     height: 100%;
     padding: 64px 0;

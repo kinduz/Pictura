@@ -3,8 +3,7 @@ import {
   Control, Controller, FieldValues, Path, PathValue,
 } from 'react-hook-form';
 import { Input as AntdInput } from 'antd';
-import { InputBlockStyled } from './Input.styled';
-import { ErrorInputMessage } from '../../../styles';
+import { ErrorInputMessage, InputBlockStyled } from '@shared/styles';
 
 interface InputProps<TFieldValues extends FieldValues>{
   control: Control<TFieldValues>;
@@ -42,6 +41,7 @@ export const Input = <TFieldValues extends FieldValues>({
                 variant="outlined"
                 placeholder={placeholder}
                 size="large"
+                autoSize
               />
             )
               : type === 'password' ? (

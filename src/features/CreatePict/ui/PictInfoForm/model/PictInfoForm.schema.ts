@@ -1,3 +1,4 @@
+import { PictTags } from '@shared/api';
 import * as yup from 'yup';
 
 export const PictInfoFormSchema = yup.object().shape({
@@ -8,7 +9,7 @@ export const PictInfoFormSchema = yup.object().shape({
     'Введите корректную ссылку',
   ),
   board: yup.string(),
-  tags: yup.mixed(),
+  tags: yup.mixed<PictTags[]>(),
   allowComments: yup.boolean(),
   allowDownload: yup.boolean(),
 });

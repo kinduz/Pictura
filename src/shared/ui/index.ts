@@ -9,3 +9,4 @@ export * from './Toast';
 export * from './ImageBlock';
 export * from './SuccessStep';
 export * from './Checkbox';
+export * from './Select';

@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Checkbox, Input } from '@shared/ui';
+import { Checkbox, Input, Select } from '@shared/ui';
 import { FC, useEffect } from 'react';
 import { Flex } from 'antd';
 import { PictInfoFormSchema, PictInfoFormSchemaType } from '../model';
@@ -28,11 +28,17 @@ export const PictInfoForm:FC<TProps> = ({ isDisable, submitForm }) => {
       <Input control={control} label="Описание" type="textarea" name="description" placeholder="Добавить описание" />
       <Input control={control} label="Ссылка" name="link" placeholder="Добавить ссылку" />
       <Input control={control} label="Доска" name="board" placeholder="Выберите доску" />
-      <Input control={control} label="Теги" name="tags" placeholder="Напишите тег (пользователи не будут их видеть)" />
+      <Select
+        control={control}
+        label="Теги"
+        name="tags"
+        placeholder="Напишите тег (пользователи не будут их видеть)"
+      />
       <Flex>
         <Checkbox control={control} label="Разрешить комментарии?" name="allowComments" />
         <Checkbox control={control} label="Разрешить скачивание?" name="allowDownload" />
       </Flex>
+      <button type="submit">123</button>
     </PictInfoFormStyled>
   );
 };

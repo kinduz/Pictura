@@ -1,9 +1,7 @@
-import { ErrorInputMessage, LinkStyled } from '@shared/styles';
-import { FC } from 'react';
+import { ErrorInputMessage, InputBlockStyled, LinkStyled } from '@shared/styles';
 import {
-  Control, Controller, FieldValues, Path, PathValue,
+  Control, Controller, FieldValues, Path,
 } from 'react-hook-form';
-import { InputBlockStyled } from '../Input/ui/Input.styled';
 import { CheckboxStyled } from './Checkbox.styled';
 
 interface InputProps<TFieldValues extends FieldValues>{
